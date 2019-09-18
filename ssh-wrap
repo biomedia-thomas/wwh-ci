@@ -1,0 +1,16 @@
+#!/bin/bash
+eval `ssh-agent`
+
+if [ ! -z "$OPENSSH_KEY" ] 
+then
+    echo "$OPENSSH_KEY" | base64 -d | ssh-add -
+    export OPENSSH_KEY=
+fi
+if [ -f deployment/known_hosts ]
+then
+    mkdir -p ~/.ssh
+    chmod 755 ~/.ssh
+    cat deployment/known_hosts >> ~/.ssh/known_hosts
+fi
+
+"$@"
