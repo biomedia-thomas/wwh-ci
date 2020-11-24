@@ -4,7 +4,7 @@ RUN adduser -D -s /bin/bash worker && \
  apk --no-cache add \
  git rsync curl bash openssl openssh-client zip unzip \ 
  php php-intl php-openssl php-soap php-gmp php-phar php-pdo_mysql php-sodium php-mysqli php-ctype php-mbstring php-pdo \
- php-json php-fileinfo php-curl php-opcache php-exif php-zip php-gd php-xml php-simplexml php-iconv php-posix php-ftp \
+ php-json php-fileinfo php-curl php-opcache php-exif php-zip php-gd php-xml php-xmlreader php-simplexml php-iconv php-posix php-ftp \
  php-session php-tokenizer php-xmlwriter php-dom \
  composer nodejs npm
 
