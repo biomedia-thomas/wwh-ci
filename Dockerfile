@@ -8,6 +8,7 @@ RUN adduser -D -s /bin/bash worker && \
  php-session php-tokenizer php-xmlwriter php-dom \
  composer nodejs npm
 
+RUN npm i -g npm
 RUN curl -s https://api.github.com/repos/fabpot/local-php-security-checker/releases/latest | \
     jq -r '.assets[] | select(.name | contains("linux_amd64")) | .browser_download_url' | xargs wget -O /usr/local/bin/local-php-security-checker \
     && chmod +x /usr/local/bin/local-php-security-checker
