@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.13
 
 RUN adduser -D -s /bin/bash worker && \
  apk --no-cache add \
@@ -14,7 +14,7 @@ RUN curl -s https://api.github.com/repos/fabpot/local-php-security-checker/relea
 
 USER worker
 
-RUN composer global require deployer/deployer ^6.0 deployer/recipes ^6.0 hirak/prestissimo
+RUN composer global require deployer/deployer ^6.0 deployer/recipes ^6.0
 
 COPY --chown=worker:worker ssh-wrap /home/worker/bin/
 RUN echo 'export PATH=$PATH:$HOME/bin:$HOME/.composer/vendor/bin' >> ~/.bashrc && \
